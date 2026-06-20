@@ -106,13 +106,13 @@ git config --global https.proxy
 
 在源代码页面做一次拉取操作，目的把主分支同步到最新状态。
 
-<img src="images/pull.png" style="zoom:80%;" />
+<img src="images/pull.png" style="zoom: 50%;" />
 
 ## 2. 创建开发分支（Dev Branch）
 
 在源代码管理页面，如图所示，选择【创建分支...】
 
-<img src="images/branch-new.png" style="zoom: 67%;" />
+<img src="images/branch-new.png" style="zoom: 50%;" />
 
 输入分支的名字，按回车键创建。
 
@@ -160,7 +160,9 @@ git config --global https.proxy
 
 通常情况下，提交之后，**【提交】**按钮会变成**【同步更改 1↑】**。点击它，这个提交就会被同步到远程仓库，队友就能切换到你的分支来看了。
 
-## 重复 3~4 步，在分支上不断迭代更新
+**重复第 3 步、第 4 步，在分支上不断迭代更新。直到你认为这个开发分支的任务完成了，可以合并到主分支时，进入第 5 步。**
+
+
 
 ## 5. 新建 Pull Request
 
@@ -185,7 +187,7 @@ git config --global https.proxy
 
 打开 Github 仓库页面 → Pull Request → **New Pull Request**。 
 
-![](images/pr-new.png)
+<img src="images/pr-new.png" style="zoom: 50%;" />
 
 在 compare 处选择你的开发分支。
 
@@ -197,7 +199,7 @@ git config --global https.proxy
 
 然后给这个 PR 写一个标题，写一些描述，告诉团队这个开发分支做了什么，有什么新功能，以及注意事项等等。之后点击 **Create Pull Request** 就可以开启 PR 了。
 
-![](images/pr-open-pr.png)
+<img src="images/pr-open-pr.png" style="zoom:50%;" />
 
 ## 6. 审查代码
 
@@ -237,6 +239,10 @@ git config --global https.proxy
 
 在 PR 页面最底部，如果没有冲突，就会显示 No conflicts with base branch，此时可以进行合并。
 
+> [!note]
+>
+> 如果提示有冲突（Conflicts），不能合并，参阅 [如何处理冲突？](#如何处理冲突？) 。
+
 > [!warning]
 >
 > **注意：不要直接点击 Create a merge commit，而是点击旁边的倒三角，选择 Squash and merge。**
@@ -259,7 +265,7 @@ git config --global https.proxy
 
 回到 VS Code，如图所示，点击**【签出到...】**(对应到 `git checkout` 命令)
 
-<img src="images/branch-checkout.png" style="zoom: 80%;" />
+<img src="images/branch-checkout.png" style="zoom: 50%;" />
 
 在弹出的输入框中输入 `main`，选择 `main`（**不是** `origin/main`）。
 
@@ -267,7 +273,7 @@ git config --global https.proxy
 
 在源代码页面做一次拉取操作，把主分支同步到最新状态。同时
 
-<img src="images/pull.png" style="zoom:80%;" />
+<img src="images/pull.png" style="zoom: 50%;" />
 
 ---
 
@@ -391,7 +397,7 @@ docs: 修复了头像加载超时问题  ← 搭配了错误的前缀
 >
 > 切换分支前，**确保当前工作区的修改都已经提交/暂存**。
 >
-> 如果有未提交的改动，Git 可能会弹出警告，可以考虑先储藏再签出（参照 [储藏是什么？如何储藏？](#储藏是什么？如何储藏？)）。
+> 如果有未提交的改动，Git 可能会弹出警告，可以考虑先储藏再签出（参阅 [储藏是什么？如何储藏？](#储藏是什么？如何储藏？)）。
 
 ### 通过 VS Code 切换
 
@@ -399,11 +405,11 @@ docs: 修复了头像加载超时问题  ← 搭配了错误的前缀
 
 1. 在面板顶部，找到当前分支名称的旁边，点击 **"签出到..."**（或类似的分支切换入口）。
 
-   <img src="images/branch-checkout.png" style="zoom:67%;" />
+   <img src="images/branch-checkout.png" style="zoom: 50%;" />
 
 2. 在弹出的下拉列表中，选择你要切换到的分支。
 
-   <img src="images/branch-checkout-2.png" style="zoom: 67%;" />
+   <img src="images/branch-checkout-2.png" style="zoom: 50%;" />
 
 3. VS Code 会自动切换分支，工作区中的文件会同步更新。
 
@@ -432,7 +438,7 @@ VS Code 最底部有一行状态栏，显示的就是**当前所在的分支名*
 
 在 VS Code 的**源代码管理面板**中，点击顶部菜单栏的 **"..."（更多操作）**，会看到 "存储"（Stash）相关的选项：
 
-<img src="images/stash.png" style="zoom:67%;" />
+<img src="images/stash.png" style="zoom: 50%;" />
 
 | 操作 | 说明 |
 |---|---|
@@ -504,7 +510,7 @@ VS Code 最底部有一行状态栏，显示的就是**当前所在的分支名*
     >
     > 如果**【Resolve conflicts】**按钮是灰的，并且提示 “too complex to resolve on GitHub”，表示冲突太复杂了。
     >
-    > 这种情况一般是这个 PR 的分支太久没有同步主分支导致的，可参照 Q&A [我在开发分支里，怎么把主分支的最新修改同步过来？](##我在开发分支里，怎么把主分支的最新修改同步过来？) 里的办法同步主分支，并处理冲突，然后再回到 PR 页面去合并。
+    > 这种情况一般是这个 PR 的分支太久没有同步主分支导致的，可参阅 Q&A [我在开发分支里，怎么把主分支的最新修改同步过来？](##我在开发分支里，怎么把主分支的最新修改同步过来？) 里的办法同步主分支，并处理冲突，然后再回到 PR 页面去合并。
 
 2. 找到 `<<<<<<<` 到 `>>>>>>>` 之间的区域。
 
@@ -530,7 +536,7 @@ VS Code 最底部有一行状态栏，显示的就是**当前所在的分支名*
 
 有时候在自己的开发分支里写到一半，队友的代码合并到了主分支，而我需要用他的代码。这种情况可以这样做：
 
-1. 签出到主分支，然后进行拉取，确保主分支是新的（参照 [1. 拉取主分支](#1. 拉取主分支)）。
+1. 签出到主分支，然后进行拉取，确保主分支是新的（参阅 [1. 拉取主分支](#1. 拉取主分支)）。
 
 2. 签出到开发分支，然后点击【拉取自...】，在弹出的输入框里选择 `main` 主分支（**不是** `origin/main`），目的是把主分支上别人新写的代码，同步/合并到 PR 的分支里来。
 
