@@ -283,14 +283,14 @@ git config --global https.proxy
 
 - **PR 合并后**，原来的开发分支的使命就到此结束了，**后续的修改不再提交到这个分支上**。
 
-  > [!tip]
-  >
-  > 如果后续要继续修改这个模块、子功能的内容，应该另开分支来处理。
-  >
-  > 例如：原开发分支叫 ` feature/chassis-solver`：
-  >
-  > - 要迭代新版本，可以创建分支`feature/chassis-solver-v2`
-  > - 要修复第一版的问题，可以创建分支 `fix/chassis-solver`
+> [!tip]
+>
+> 如果后续要继续修改这个模块、子功能的内容，应该另开分支来处理。
+>
+> 例如：原开发分支叫 ` feature/chassis-solver`：
+>
+> - 要迭代新版本，可以创建分支`feature/chassis-solver-v2`
+> - 要修复第一版的问题，可以创建分支 `fix/chassis-solver`
 
 - 实际开发过程中，步骤的进行是这样的：`1→2→3→4→3→4→3→4→...→3→4→5→6→7→8`。
 
